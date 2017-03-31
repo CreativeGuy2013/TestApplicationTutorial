@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <h1>Calculator</h1>
+        <p>This is the calculator application!</p>
+        <input type="text" id="tb1" placeholder="First Number"> <button onclick="calculate('+')">+</button> <button onclick="calculate('-')">-</button> <button onclick="calculate('*')">*</button> <button onclick="calculate('/')">/</button> <input type="text" id="tb2" placeholder="Second Number">
+        <br />
+        <br />
+        <div id="answer">
+        Answer:
+        </div>
+    </body>
+    <script type="text/javascript">
+        function calculate(operator){
+            var firstNumber = document.getElementById("tb1").value;
+            var secondNumber = document.getElementById("tb2").value;
+            var answer;
+
+            if (operator == "+") {
+                answer = parseInt(firstNumber) + parseInt(secondNumber);
+            } else if (operator == "-") {
+                answer = firstNumber - secondNumber;
+            } else if (operator == "*") {
+                answer = firstNumber * secondNumber;
+            } else if (operator == "/") {
+                answer = firstNumber / secondNumber;
+            }
+
+            document.getElementById("answer").innerHTML = 'Answer:' + answer;
+        }
+    </script>
+</html>
